@@ -1,0 +1,146 @@
+:root {
+
+    /* Colors */
+
+    --primary-purple: hsl(259, 100%, 65%);
+    --primary-light-red: hsl(0, 100%, 67%);
+
+    /* Neutral */
+
+    --neutral-White: hsl(0, 0%, 100%);
+    --neutral-off-white: hsl(0, 0%, 94%);
+    --neutral-light-grey: hsl(0, 0%, 86%);
+    --neutral-smokey-grey: hsl(0, 1%, 44%);
+    --neutral-off-black: hsl(0, 0%, 8%);
+
+    /* Fonts */
+    --ff-primary: 'Poppins', sans-serif;
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-inline: 1.5rem;
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-bold);
+    line-height: 1.1;
+    background-color: var(--neutral-off-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.age-count {
+    padding: 2.5rem 1.5rem;
+    max-width: 500px;
+    background-color: var(--neutral-White);
+    border-radius: 20px 20px 90px 20px;
+
+    flex-grow: 1;
+}
+
+form {
+    margin-inline: auto;
+    max-width: min(100%, 300px);
+    display: flex;
+    justify-content: space-between;
+    gap: .6rem;
+
+}
+
+.input-group {
+    flex-grow: 1;
+}
+
+.input-group label {
+    margin-bottom: .4rem;
+    display: block;
+    font-size: .7rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--neutral-smokey-grey);
+}
+
+.input-group input {
+    padding: .6em .5em;
+    max-width: 80px;
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    outline: 0;
+    border: 1px solid var(--neutral-light-grey);
+    border-radius: 10px;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-purple);
+}
+
+.age-result {
+    font-size: 2.6em;
+    font-style: italic;
+    font-weight: var(--fw-bold);
+}
+
+.age-result span {
+    margin-right: .3em;
+    color: var(--primary-purple);
+}
+
+.line {
+    margin-block: 3rem;
+    border: 1px solid var(--neutral-off-white);
+    position: relative;
+}
+
+.line::before {
+    content: '';
+    display: block;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: var(--primary-purple);
+    background-image: url(./assets/images/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+}
+
+@media (min-width: 450px) {
+    form {
+        margin-inline: unset;
+    }
+
+    .age-result {
+        font-size: 3.5rem;
+    }
+
+    .input-group input {
+        max-width: 100px;
+    }
+
+    .line {
+        margin-block: 1.6rem;
+    }
+
+    .line::before {
+        left: unset;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
