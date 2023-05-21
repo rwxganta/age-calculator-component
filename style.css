@@ -118,6 +118,12 @@ form {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25px;
+    cursor: pointer;
+}
+
+.arrow:hover,
+.arrow:focus {
+    filter: brightness(1.5);
 }
 
 @media (min-width: 450px) {
