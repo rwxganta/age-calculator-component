@@ -11,7 +11,13 @@ arrowBtn.addEventListener('click', calculateAge);
 
 
 function calculateAge() {
-    const today = new Date();
+    const today = moment();
+    const age = moment(`${+yearInput.value}-${+monthInput.value}-${+dayInput.value}`);
+    const diff = moment.preciseDiff(today, age, true);
 
-    yearText.textContent =  today.getFullYear() - +yearInput.value;
+    const { years, months, days } = diff;
+
+    dayText.textContent = days;
+    monthText.textContent = months;
+    yearText.textContent = years;
 }
