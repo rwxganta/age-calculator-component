@@ -103,11 +103,10 @@ form {
     position: relative;
 }
 
-.line::before {
-    content: '';
-    display: block;
+.arrow {
     width: 50px;
     aspect-ratio: 1;
+    border: 0;
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -138,9 +137,9 @@ form {
         margin-block: 1.6rem;
     }
 
-    .line::before {
+    .arrow {
         left: unset;
-        right: 0;
+        right: -1px;
         transform: translateY(-50%);
     }
 }
